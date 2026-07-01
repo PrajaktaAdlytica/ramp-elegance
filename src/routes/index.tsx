@@ -275,7 +275,12 @@ export default function Home() {
       <Section id="pricing" eyebrow="Pricing" title="Transparent plans for teams that grow." center>
         <div className="grid gap-5 md:grid-cols-3">
           {tiers.map((t) => (
-            <HoverCard key={t.name} className={`p-8 ${t.featured ? "bg-foreground text-white" : ""}`}>
+            <HoverCard key={t.name} className={`relative p-8 ${t.featured ? "bg-foreground text-white ring-1 ring-accent/40" : ""}`}>
+              {t.featured && (t as { badge?: string }).badge && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-white shadow-lg shadow-accent/40">
+                  {(t as { badge?: string }).badge}
+                </div>
+              )}
               <div className={`text-sm font-medium ${t.featured ? "text-white/70" : "text-muted-foreground"}`}>{t.name}</div>
               <div className="mt-3 flex items-baseline gap-1">
                 <span className="display text-4xl tnum">{t.price}</span>
