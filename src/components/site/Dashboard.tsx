@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, Clock, AlertTriangle, TrendingUp, FileCheck2, Zap } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Clock, AlertTriangle, TrendingUp, FileCheck2, Zap, Eye, MessageSquare, MoreHorizontal } from "lucide-react";
 import { CountUp } from "./CountUp";
 
 const spring = { type: "spring" as const, stiffness: 120, damping: 20, mass: 0.6 };
