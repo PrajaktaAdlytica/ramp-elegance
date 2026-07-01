@@ -84,8 +84,17 @@ const tiers = [
     price: "€1,490",
     cadence: "/ month",
     featured: true,
+    badge: "Most popular",
     desc: "For controllers running multi-entity finance operations.",
-    features: ["Up to 150 users", "Full platform", "SSO + audit trail export", "Priority support"],
+    features: [
+      "Up to 150 users",
+      "Full platform — Approvals, Exceptions, Audit",
+      "SSO, SAML & SCIM provisioning",
+      "Audit trail export & Vanta control mapping",
+      "Multi-entity & multi-currency (EUR, PLN, GBP, USD)",
+      "Priority support with 4h SLA",
+      "Dedicated implementation engineer",
+    ],
   },
   {
     name: "Enterprise",
