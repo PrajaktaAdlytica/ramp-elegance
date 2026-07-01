@@ -286,6 +286,11 @@ export default function Home() {
                 <span className="display text-4xl tnum">{t.price}</span>
                 <span className={t.featured ? "text-white/60" : "text-muted-foreground"}>{t.cadence}</span>
               </div>
+              {(t as { annual?: string }).annual && (
+                <div className={`mt-1 text-sm ${t.featured ? "text-white/50" : "text-muted-foreground"}`}>
+                  {(t as { annual?: string }).annual}
+                </div>
+              )}
               <p className={`mt-3 text-[15px] leading-relaxed ${t.featured ? "text-white/70" : "text-muted-foreground"}`}>{t.desc}</p>
               <ul className="mt-6 space-y-3 text-sm">
                 {t.features.map((f) => (
