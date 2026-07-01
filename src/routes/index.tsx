@@ -84,6 +84,7 @@ const tiers = [
     name: "Growth",
     price: "€1,490",
     cadence: "/ month",
+    annual: "€14,900 / year billed annually (save 17%)",
     featured: true,
     badge: "Most popular",
     desc: "For controllers running multi-entity finance operations.",
@@ -274,7 +275,7 @@ export default function Home() {
       <Section id="pricing" eyebrow="Pricing" title="Transparent plans for teams that grow." center>
         <div className="grid gap-5 md:grid-cols-3">
           {tiers.map((t) => (
-            <HoverCard key={t.name} className={`relative p-8 ${t.featured ? "bg-foreground text-white ring-1 ring-accent/40" : ""}`}>
+            <HoverCard key={t.name} className={`relative p-8 ${t.featured ? "!bg-foreground text-white ring-1 ring-accent/40" : ""}`}>
               {t.featured && (t as { badge?: string }).badge && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-white shadow-lg shadow-accent/40">
                   {(t as { badge?: string }).badge}
@@ -285,6 +286,11 @@ export default function Home() {
                 <span className="display text-4xl tnum">{t.price}</span>
                 <span className={t.featured ? "text-white/60" : "text-muted-foreground"}>{t.cadence}</span>
               </div>
+              {(t as { annual?: string }).annual && (
+                <div className={`mt-1 text-sm ${t.featured ? "text-white/50" : "text-muted-foreground"}`}>
+                  {(t as { annual?: string }).annual}
+                </div>
+              )}
               <p className={`mt-3 text-[15px] leading-relaxed ${t.featured ? "text-white/70" : "text-muted-foreground"}`}>{t.desc}</p>
               <ul className="mt-6 space-y-3 text-sm">
                 {t.features.map((f) => (
