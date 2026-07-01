@@ -84,6 +84,7 @@ const tiers = [
     name: "Growth",
     price: "€1,490",
     cadence: "/ month",
+    annual: "€14,900 / year billed annually (save 17%)",
     featured: true,
     badge: "Most popular",
     desc: "For controllers running multi-entity finance operations.",
