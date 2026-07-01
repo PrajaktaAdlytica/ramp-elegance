@@ -9,38 +9,161 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SigninRouteImport } from './routes/signin'
+import { Route as RequestDemoRouteImport } from './routes/request-demo'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsExceptionsRouteImport } from './routes/products.exceptions'
+import { Route as ProductsAuditRouteImport } from './routes/products.audit'
+import { Route as ProductsApprovalsRouteImport } from './routes/products.approvals'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SigninRoute = SigninRouteImport.update({
+  id: '/signin',
+  path: '/signin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestDemoRoute = RequestDemoRouteImport.update({
+  id: '/request-demo',
+  path: '/request-demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsExceptionsRoute = ProductsExceptionsRouteImport.update({
+  id: '/products/exceptions',
+  path: '/products/exceptions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsAuditRoute = ProductsAuditRouteImport.update({
+  id: '/products/audit',
+  path: '/products/audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsApprovalsRoute = ProductsApprovalsRouteImport.update({
+  id: '/products/approvals',
+  path: '/products/approvals',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/request-demo': typeof RequestDemoRoute
+  '/signin': typeof SigninRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/products/approvals': typeof ProductsApprovalsRoute
+  '/products/audit': typeof ProductsAuditRoute
+  '/products/exceptions': typeof ProductsExceptionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/request-demo': typeof RequestDemoRoute
+  '/signin': typeof SigninRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/products/approvals': typeof ProductsApprovalsRoute
+  '/products/audit': typeof ProductsAuditRoute
+  '/products/exceptions': typeof ProductsExceptionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/request-demo': typeof RequestDemoRoute
+  '/signin': typeof SigninRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/products/approvals': typeof ProductsApprovalsRoute
+  '/products/audit': typeof ProductsAuditRoute
+  '/products/exceptions': typeof ProductsExceptionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/request-demo'
+    | '/signin'
+    | '/sitemap.xml'
+    | '/products/approvals'
+    | '/products/audit'
+    | '/products/exceptions'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/request-demo'
+    | '/signin'
+    | '/sitemap.xml'
+    | '/products/approvals'
+    | '/products/audit'
+    | '/products/exceptions'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/request-demo'
+    | '/signin'
+    | '/sitemap.xml'
+    | '/products/approvals'
+    | '/products/audit'
+    | '/products/exceptions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  RequestDemoRoute: typeof RequestDemoRoute
+  SigninRoute: typeof SigninRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ProductsApprovalsRoute: typeof ProductsApprovalsRoute
+  ProductsAuditRoute: typeof ProductsAuditRoute
+  ProductsExceptionsRoute: typeof ProductsExceptionsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signin': {
+      id: '/signin'
+      path: '/signin'
+      fullPath: '/signin'
+      preLoaderRoute: typeof SigninRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-demo': {
+      id: '/request-demo'
+      path: '/request-demo'
+      fullPath: '/request-demo'
+      preLoaderRoute: typeof RequestDemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +171,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/exceptions': {
+      id: '/products/exceptions'
+      path: '/products/exceptions'
+      fullPath: '/products/exceptions'
+      preLoaderRoute: typeof ProductsExceptionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/audit': {
+      id: '/products/audit'
+      path: '/products/audit'
+      fullPath: '/products/audit'
+      preLoaderRoute: typeof ProductsAuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/approvals': {
+      id: '/products/approvals'
+      path: '/products/approvals'
+      fullPath: '/products/approvals'
+      preLoaderRoute: typeof ProductsApprovalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  RequestDemoRoute: RequestDemoRoute,
+  SigninRoute: SigninRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ProductsApprovalsRoute: ProductsApprovalsRoute,
+  ProductsAuditRoute: ProductsAuditRoute,
+  ProductsExceptionsRoute: ProductsExceptionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
