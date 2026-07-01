@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Ledgerza unifies approvals, financial exceptions and audit trails into one intelligent finance operations platform for modern European businesses.",
       },
       { name: "author", content: "Ledgerza" },
-      { property: "og:title", content: "Ledgerza — Operational Finance in One Place" },
+      { property: "og:title", content: "Ledgerza — Operational Finance. Finally in One Place." },
       {
         property: "og:description",
         content:
@@ -93,6 +93,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Ledgerza — Operational Finance. Finally in One Place." },
+      { name: "description", content: "Sohne UI is a design system for building premium B2B SaaS websites with a clean, editorial, and modern finance software aesthetic." },
+      { property: "og:description", content: "Sohne UI is a design system for building premium B2B SaaS websites with a clean, editorial, and modern finance software aesthetic." },
+      { name: "twitter:description", content: "Sohne UI is a design system for building premium B2B SaaS websites with a clean, editorial, and modern finance software aesthetic." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7599298a-3348-40a8-b1b9-3d39d082973b/id-preview-7bafe5b0--816a4c5a-966d-4b56-9287-441cc5dc622b.lovable.app-1782911146053.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7599298a-3348-40a8-b1b9-3d39d082973b/id-preview-7bafe5b0--816a4c5a-966d-4b56-9287-441cc5dc622b.lovable.app-1782911146053.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
