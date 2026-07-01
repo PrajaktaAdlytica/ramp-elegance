@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, Clock, AlertTriangle, TrendingUp, FileCheck2, Zap } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Clock, AlertTriangle, TrendingUp, FileCheck2, Zap, Eye, MessageSquare, MoreHorizontal } from "lucide-react";
 import { CountUp } from "./CountUp";
 
 const spring = { type: "spring" as const, stiffness: 120, damping: 20, mass: 0.6 };
@@ -86,15 +86,15 @@ export function Dashboard({ compact = false }: { compact?: boolean }) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ ...spring, delay: 0.35 + i * 0.08 }}
-                className="grid grid-cols-12 items-center gap-3 px-4 py-3 text-sm"
+                className="group relative grid grid-cols-12 items-center gap-3 px-4 py-3 text-sm transition-colors hover:bg-muted/60"
               >
                 <div className="col-span-3 tnum font-medium">{r.v}</div>
                 <div className="col-span-3 text-muted-foreground">{r.who}</div>
                 <div className="col-span-3 text-muted-foreground">{r.type}</div>
-                <div className="col-span-3 text-right">
+                <div className="col-span-3 flex items-center justify-end gap-2">
                   <span
                     className={
-                      "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] " +
+                      "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] transition-all group-hover:opacity-0 group-hover:-translate-x-2 " +
                       (r.tone === "ok"
                         ? "bg-emerald-50 text-emerald-700"
                         : r.tone === "warn"
@@ -105,6 +105,17 @@ export function Dashboard({ compact = false }: { compact?: boolean }) {
                     {r.tone === "ok" ? <CheckCircle2 className="h-3 w-3" /> : <Clock className="h-3 w-3" />}
                     {r.state}
                   </span>
+                  <div className="pointer-events-none absolute right-4 flex items-center gap-1 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
+                    <button className="rounded-md border border-border bg-white p-1.5 text-muted-foreground shadow-sm hover:text-accent" aria-label="View">
+                      <Eye className="h-3.5 w-3.5" />
+                    </button>
+                    <button className="rounded-md border border-border bg-white p-1.5 text-muted-foreground shadow-sm hover:text-accent" aria-label="Comment">
+                      <MessageSquare className="h-3.5 w-3.5" />
+                    </button>
+                    <button className="rounded-md border border-border bg-white p-1.5 text-muted-foreground shadow-sm hover:text-accent" aria-label="More">
+                      <MoreHorizontal className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}

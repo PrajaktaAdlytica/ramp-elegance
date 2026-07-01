@@ -21,6 +21,7 @@ import { ShimmerButton, OutlineButton } from "@/components/site/Button";
 import { Section } from "@/components/site/Section";
 import { HoverCard } from "@/components/site/HoverCard";
 import { Dashboard } from "@/components/site/Dashboard";
+import { WorkflowTimeline } from "@/components/site/WorkflowTimeline";
 import { CountUp } from "@/components/site/CountUp";
 import { FAQ } from "@/components/site/FAQ";
 import { Link } from "@tanstack/react-router";
@@ -84,8 +85,17 @@ const tiers = [
     price: "€1,490",
     cadence: "/ month",
     featured: true,
+    badge: "Most popular",
     desc: "For controllers running multi-entity finance operations.",
-    features: ["Up to 150 users", "Full platform", "SSO + audit trail export", "Priority support"],
+    features: [
+      "Up to 150 users",
+      "Full platform — Approvals, Exceptions, Audit",
+      "SSO, SAML & SCIM provisioning",
+      "Audit trail export & Vanta control mapping",
+      "Multi-entity & multi-currency (EUR, PLN, GBP, USD)",
+      "Priority support with 4h SLA",
+      "Dedicated implementation engineer",
+    ],
   },
   {
     name: "Enterprise",
@@ -224,9 +234,7 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          <HoverCard className="p-2">
-            <Dashboard compact />
-          </HoverCard>
+          <WorkflowTimeline />
         </div>
       </Section>
 
@@ -266,7 +274,12 @@ export default function Home() {
       <Section id="pricing" eyebrow="Pricing" title="Transparent plans for teams that grow." center>
         <div className="grid gap-5 md:grid-cols-3">
           {tiers.map((t) => (
-            <HoverCard key={t.name} className={`p-8 ${t.featured ? "bg-foreground text-white" : ""}`}>
+            <HoverCard key={t.name} className={`relative p-8 ${t.featured ? "bg-foreground text-white ring-1 ring-accent/40" : ""}`}>
+              {t.featured && (t as { badge?: string }).badge && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-white shadow-lg shadow-accent/40">
+                  {(t as { badge?: string }).badge}
+                </div>
+              )}
               <div className={`text-sm font-medium ${t.featured ? "text-white/70" : "text-muted-foreground"}`}>{t.name}</div>
               <div className="mt-3 flex items-baseline gap-1">
                 <span className="display text-4xl tnum">{t.price}</span>
