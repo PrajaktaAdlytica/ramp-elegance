@@ -233,9 +233,7 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          <HoverCard className="p-2">
-            <Dashboard compact />
-          </HoverCard>
+          <WorkflowTimeline />
         </div>
       </Section>
 
