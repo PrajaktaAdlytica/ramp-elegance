@@ -21,6 +21,7 @@ import { ShimmerButton, OutlineButton } from "@/components/site/Button";
 import { Section } from "@/components/site/Section";
 import { HoverCard } from "@/components/site/HoverCard";
 import { Dashboard } from "@/components/site/Dashboard";
+import { WorkflowTimeline } from "@/components/site/WorkflowTimeline";
 import { CountUp } from "@/components/site/CountUp";
 import { FAQ } from "@/components/site/FAQ";
 import { Link } from "@tanstack/react-router";
