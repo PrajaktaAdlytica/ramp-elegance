@@ -20,7 +20,7 @@ function SignIn() {
   return (
     <WovenLightHero className="min-h-screen">
       <div className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-6 py-16">
-        <Link to="/"><Logo className="h-8" /></Link>
+        <Link to="/"><Logo className="h-10 w-auto" /></Link>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -1,9 +1,7 @@
-import logo from "@/assets/ledgerza-logo.asset.json";
-
-export function Logo({ className = "h-8" }: { className?: string }) {
+export function Logo({ className = "h-10 w-auto" }: { className?: string }) {
   return (
     <a href="/" className="flex items-center gap-2">
-      <img src={logo.url} alt="Ledgerza" className={className} />
+      <img src="/ledgerza-logo.png" alt="Ledgerza" className={className} />
     </a>
   );
 }

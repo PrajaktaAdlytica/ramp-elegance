@@ -34,7 +34,7 @@ export function Navbar() {
         }`}
       >
         <div className="flex items-center gap-10">
-          <Logo className={scrolled ? "h-7" : "h-8"} />
+          <Logo className={scrolled ? "h-10 w-auto" : "h-11 w-auto"} />
           <nav className="hidden items-center gap-1 md:flex">
             <Link
               to="/"

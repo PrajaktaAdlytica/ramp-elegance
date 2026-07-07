@@ -42,7 +42,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-10 md:grid-cols-6">
           <div className="md:col-span-2">
-            <Logo className="h-8" />
+            <Logo className="h-9 w-auto" />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Operational finance software for modern European businesses. Warsaw, Poland.
             </p>
